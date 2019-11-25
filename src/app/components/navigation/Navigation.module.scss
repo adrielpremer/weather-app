@@ -1,0 +1,36 @@
+@import "../../../styles/shared";
+
+.navigation {
+  @extend %interactive-element;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color: $nav-bg-color;
+
+  .link {
+    a {
+      @extend %transition;
+      display: block;
+      padding: 2em 1em;
+      margin: 0 $spacing;
+      border-bottom: $border-style $nav-bg-color;
+      color: $nav-link-color;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &.selected {
+        border-bottom: $border-style $nav-link-color;
+      }
+
+      &:hover {
+        color: $nav-link-hover-color;
+        border-bottom: $border-style $nav-link-hover-color;
+      }
+
+      &:active {
+        color: $nav-link-active-color;
+        border-bottom: $border-style $nav-link-active-color;
+      }
+    }
+  }
+}

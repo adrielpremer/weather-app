@@ -1,0 +1,64 @@
+@import "variables";
+
+%transition {
+  transition: 0.5s ease;
+}
+
+%interactive-element {
+  font: bold $font-size $text-font-family;
+}
+
+%input {
+  @extend %interactive-element;
+  @extend %transition;
+  width: 100%;
+  color: $input-color;
+  background: $input-bg-color;
+  border: $border-style transparent;
+  border-radius: $border-radius;
+  margin: $spacing;
+  padding: 1em;
+
+  &::placeholder {
+    color: rgba($input-color, 0.5);
+  }
+
+  &:hover {
+    color: $input-hover-color;
+    border: $border-style $input-hover-color;
+  }
+
+  &:focus {
+    color: $primary-color;
+    border: $border-style $primary-color;
+  }
+}
+
+%control {
+  @extend %transition;
+  &:hover {
+    color: $primary-color;
+    transition: 0.1ms;
+  }
+  &:active {
+    color: $input-active-color;
+  }
+}
+
+@mixin compact-input() {
+  .compact {
+    input,
+    select {
+      padding: $compact-spacing;
+    }
+  }
+}
+
+@mixin nospacing-input() {
+  .nospacing {
+    input,
+    select {
+      margin: 0;
+    }
+  }
+}

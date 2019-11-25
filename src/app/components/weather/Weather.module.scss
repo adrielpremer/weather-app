@@ -1,0 +1,33 @@
+.row {
+  width: 150px;
+  height: 400px;
+  float: left;
+}
+.weathercontainer {
+  width: 1050px;
+  height: 400px;
+  margin-top: 50px;
+}
+.day {
+  float: left;
+  width: 50%;
+}
+.night {
+  float: right;
+  width: 50%;
+}
+.description {
+  height: 50px;
+}
+.temperature {
+  height: 60px;
+}
+.humidity {
+  height: 50px;
+}
+.wind {
+  padding: 0px;
+
+  margin: 10px;
+  height: 20px;
+}

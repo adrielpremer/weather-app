@@ -1,0 +1,39 @@
+@import "../../../styles/shared";
+
+button {
+  @extend %interactive-element;
+  @extend %transition;
+  cursor: pointer;
+  border: $border-style transparent;
+  border-radius: 5px;
+  color: white;
+  margin: $spacing;
+  padding: 1em;
+  min-width: 25px;
+}
+
+.compact {
+  padding: $compact-spacing;
+}
+
+.nospacing {
+  margin: 0;
+}
+
+@mixin button-type($type, $bg, $color) {
+  .#{$type} {
+    color: $color;
+    background-color: $bg;
+    &:hover {
+      background-color: lighten($bg, 10%);
+    }
+
+    &:focus {
+      background-color: lighten($bg, 15%);
+    }
+  }
+}
+
+@include button-type("default", $text-color, white);
+@include button-type("primary", $primary-color, white);
+@include button-type("danger", $danger-color, white);
